@@ -81,21 +81,22 @@ while(i){
                 if(orders >= 2){
                     let randomNumber = (Math.random()*21).toFixed();
                     let freeFoodItem = foodItems[randomNumber];
-                    alert("you get free "+freeFoodItem)
+                    
+                   document.write(`<h1 style='border: 1px solid black;color:white; background-color:black;padding:10px;'><center>Customer Name ${userName} <hr> </br> products : ${buyProducts} <hr> </br> You Get free : ${freeFoodItem} <hr></br> THANK YOU FOR ORDER YOUR ORDER WILL DELIVER SOON!</center></h1>`)
                     i = false;
-
-                    if(orders >= 1){
-                        i = false;
+                }
+                else if(orders == 1){
+                    document.write(`<h1 style='border: 1px solid black;color:white; background-color:black;padding:10px;'><center>Customer Name ${userName} <hr> </br> products : ${buyProducts} <hr> </br> THANK YOU FOR ORDER YOUR ORDER WILL DELIVER SOON!</center></h1>`)
+                    i = false;
+                }
+                else if(orders == 0){
+                    // alert("order something press y for yes")
+                    let orderAgain = prompt("do you want to order press y for yes or n for no");
+                    if(orderAgain.toLowerCase().substring(0,1) == "y"){
+                        i = true;
                     }
-                    else if(orders == 0){
-                        // alert("order something press y for yes")
-                        let orderAgain = prompt("do you want to order again press y for yes or n for no");
-                        if(orderAgain.toLowerCase().substring(0,1) == "y"){
-                            i = true;
-                        }
-                        else{
-                            i = false;
-                        }
+                    else{
+                        i = false;
                     }
                 }
                 i = false;
